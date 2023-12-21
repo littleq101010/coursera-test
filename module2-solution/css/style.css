@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+.section-container {
+    box-sizing: border-box;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid black;
+    position: relative; /* Make the container relative for absolute positioning of title */
+    /* float: left; */
+}
+
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ffcc00; /* Unique color for each section title region */
+    padding: 0.5em;
+    border: 1px solid black;
+}
+
+/* Shared styles for all views */
+.section {
+    width: 33.33%;
+    box-sizing: border-box;
+    float: left;
+}
+
+/* Tablet View (768px to 991px, inclusively) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .section-group {
+        width: 100%; /* Set to 100% to occupy the full width in tablet view */
+        box-sizing: border-box;
+    }
+
+    .section {
+        width: 50%; /* Set to 50% for the first two sections in the same row */
+        float: left;
+    }
+
+    .section:nth-child(4) {
+        width: 100%; /* Set to 100% for the third section to take the entire row */
+        float: none;
+        clear: both; /* Clear both to move the third section below the first two */
+    }
+}
+
+/* Mobile View (Equal to or less than 767px) */
+@media (max-width: 767px) {
+    /* Reset styles to ensure all sections are in the same row on mobile view */
+    .section, .section-group {
+        width: 100%; /* Set to 100% for mobile view */
+        float: none;
+    }
+}
+
+
+
+
+
+
